@@ -1,0 +1,83 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.Layouthome{
+    background-image: url('./assets/image.png');
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    filter: brightness(0.3);
+    z-index: -1;
+}
+.sliding-text-container {
+    overflow: hidden;
+    width: 500px;
+}
+.sliding-text {
+    display: inline-block;
+    white-space: nowrap;
+    font-weight: bold;
+    animation: slide 5s linear infinite;
+}
+@keyframes slide {
+    0% {
+        transform: translateX(100%);
+        color: aqua;
+    }
+    100% {
+        transform: translateX(-100%);
+        color: yellow;
+    }
+}
+.notification {
+  position: fixed;
+  top: 100px;
+  right: 0;
+  background-color: white;
+  color: black;
+  padding: 16px;
+  border-radius: 0 8px 8px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: slide-in 0.3s ease-in-out forwards, fade-out 3s ease-in-out forwards;
+}
+.notification h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0;
+}
+
+.underline {
+  height: 4px;
+  margin-top: 8px;
+  animation: shrink-line 2s linear forwards;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes shrink-line {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
