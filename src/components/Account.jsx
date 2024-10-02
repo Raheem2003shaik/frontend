@@ -7,7 +7,7 @@ function Account() {
   async function fetchUserOrders() {
     try {
         const userId=localStorage.getItem('authToken');
-        const response = await fetch(`/api/${userId}/orders`, {
+        const response = await fetch(`https://backend-phm0.onrender.com/api/${userId}/orders`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

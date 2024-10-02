@@ -48,7 +48,7 @@ function Cart({ cartItems, setCartItems }) {
         cart: modifiedCartList,
         totalCost: totalCost 
       };
-      const response = await fetch(`/api/${id}/place-order`, {
+      const response = await fetch(`https://backend-phm0.onrender.com/api/${id}/place-order`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

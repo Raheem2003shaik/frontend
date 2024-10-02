@@ -13,7 +13,7 @@ const Signup = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/create-user', {
+      const response = await fetch('https://backend-phm0.onrender.com/api/create-user', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

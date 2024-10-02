@@ -12,7 +12,7 @@ const Login = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('/api/check-user', {
+      const response = await fetch('https://backend-phm0.onrender.com/api/check-user', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
