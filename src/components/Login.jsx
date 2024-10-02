@@ -22,14 +22,13 @@ const Login = () => {
       const data = await response.json();
       if (response.ok) {
         localStorage.setItem('authToken', userName);
-        setSuccessMessage(data.message + " Please Wait...");
-        setErrorMessage('');
+        toast.success('Login Successful');
         setTimeout(() => navigate(`/${userName}/dashboard/online-buy`), 1500);
       } else {
-        setErrorMessage(data.message);
+        toast.error('Invalid credentials');
       }
     } catch (error) {
-      setErrorMessage('Error logging in. Please try again.');
+      toast.error('Error logging in. Please try again.');
     }
   };
 
@@ -82,6 +81,7 @@ const Login = () => {
         </div>
       </div>
     </div>
+    <Toaster/>
     </>
   );
 };

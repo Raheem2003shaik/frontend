@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Toaster, toast } from 'react-hot-toast';
 
 const Signup = () => {
   const [userName, setUserName] = useState('');
@@ -22,15 +23,13 @@ const Signup = () => {
       });
       const data = await response.json();
       if (response.ok) {
-        setSuccessMessage(data.message);
-        setErrorMessage('');
+        toast.success("User created successfully");
         setTimeout(() => navigate('/login'), 1500);
       } else {
-        setErrorMessage(data.message);
-        setSuccessMessage('');
+        toast.error(data.message);
       }
     } catch (error) {
-      setErrorMessage('Error creating account. Please try again.');
+      toast.error('Error creating account. Please try again.');
     }
   };
 
@@ -104,6 +103,7 @@ const Signup = () => {
         </div>
       </div>
     </div>
+    <Toaster/>
     </>
   );
 };
